@@ -44,6 +44,9 @@ void (*p_func)(stack_t **, unsigned int);
 int found_number(char *token);
 int found_comment(char *token, int counter);
 void (*get_op_code(char *token, unsigned int line)) (stack_t **, unsigned int);
-
+void push_stack(stack_t **top, __attribute__ ((unused)) unsigned int line);
+void pall_stack(stack_t **top, __attribute__((unused)) unsigned int line);
+void pint_stack(stack_t **top, __attribute__((unused)) unsigned int line);
+void pop_stack(stack_t **top, __attribute__((unused)) unsigned int line);
 
 #endif
