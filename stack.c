@@ -25,4 +25,49 @@ void push_stack(stack_t **top, __attribute__ ((unused)) unsigned int line)
 	}
 }
 
+/*
+ *
+ */
+void pall_stack(stack_t **top, __attribute__((unused)) unsigned int line)
+{
+	stack_t *tmp = *top;
+	
+	while (tmp != NULL)
+	{
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
+	}
+}
 
+/*
+ *
+ */
+void pint_stack(stack_t **top, __attribute__((unused)) unsigned int line)
+{
+	if (*top != NULL)
+		printf("%d\n", (*top)->n);
+	else
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line);
+		exit(EXIT_FAILURE);
+	}
+}
+
+/*
+ *
+ */
+
+void pop_stack(stack_t **top, __attribute__((unused)) unsigned int line)
+{
+	stack_t *tmp = *top;
+
+	if (*top == NULL)
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line);
+		exit(EXIT_FAILURE);
+	}
+
+	tmp = tmp->next;
+	free(*top);
+	*top = tmp;
+}
