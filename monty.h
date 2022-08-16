@@ -43,5 +43,7 @@ void open_&_read(char **argv);
 void (*p_func)(stack_t **, unsigned int);
 int found_number(char *token);
 int found_comment(char *token, int counter);
+void (*get_op_code(char *token, unsigned int line)) (stack_t **, unsigned int);
+
 
 #endif
