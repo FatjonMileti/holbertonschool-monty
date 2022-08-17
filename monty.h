@@ -41,10 +41,10 @@ typedef struct instruction_s
 } instruction_t;
 
 void open_and_read(char **argv);
-int found_number(char *token);
+/**int found_number(char *token);*/
 int found_comment(char *token, int counter);
-void (*get_op_code(char *token, unsigned int line)) (stack_t **, unsigned int);
-void push_stack(stack_t **top, unsigned int line_number);
+int get_op_code(char *token, stack_t **top, unsigned int line);
+void push_stack(stack_t **top, unsigned int line_number, char *token);
 void pall_stack(stack_t **top, unsigned int line_number);
 void pint_stack(stack_t **top, unsigned int line);
 void pop_stack(stack_t **top, unsigned int line);

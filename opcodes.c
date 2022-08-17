@@ -5,11 +5,10 @@
  * @line: line readed
  * Return: void
  */
-void (*get_op_code(char *token, unsigned int line)) (stack_t **, unsigned int)
+int get_op_code(char *token,stack_t **top, unsigned int line)
 {
 	int i;
 	instruction_t operation[] = {
-		{"push", push_stack},
 		{"pall", pall_stack},
 		{"pint", pint_stack},
 		{"pop", pop_stack},
@@ -22,11 +21,10 @@ void (*get_op_code(char *token, unsigned int line)) (stack_t **, unsigned int)
 	{
 		if (strcmp(token, operation[i].opcode) == 0)
 		{
-			return (operation[i].f);
+			(operation[i].f)(top, line);
+			return (EXIT_SUCCESS);
 		}
 	}
 	fprintf(stderr, "L%u: unknown instruction %s\n", line, token);
 	exit(EXIT_FAILURE);
-
-	return (NULL);
 }

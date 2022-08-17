@@ -2,11 +2,29 @@
 /*
  *
  */
-void push_stack(stack_t **top, unsigned int line_number)
+void push_stack(stack_t **top, unsigned int line_number, char *token)
 {
 	stack_t *newNode;
+        int i;
 
-	(void) line_number;
+        if (token == NULL)
+        {
+                fprintf (stderr, "L%d: usage: push integer\n", line_number);
+                exit(EXIT_FAILURE);
+        }
+
+        for (i = 0; token[i]; i++)
+        {
+                if (token[0] != '-' && i == 0)
+                        continue;
+                if (isdigit(token[i]) == 0)
+                {
+                        fprintf (stderr, "L%d: usage: push integer\n", line_number);
+                        exit(EXIT_FAILURE);
+                }
+
+        }
+
 	newNode = malloc(sizeof(stack_t));
 
 	if (newNode == NULL)
@@ -15,19 +33,17 @@ void push_stack(stack_t **top, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	newNode->n = number;
+	newNode->n = atoi(token);
 	newNode->prev = NULL;
-	if (*top == NULL)
+	newNode->next = NULL;
+	
+	if(*top != NULL)
 	{
-		newNode->next = NULL;
-		*top = newNode;
+		newNode->next = *top;
+		(*top)->prev = newNode;
 	}
-	else 
-	{
-	newNode->next = *top;
-	(*top)->prev = newNode;
+	
 	*top = newNode;
-	}
 }
 
 /*

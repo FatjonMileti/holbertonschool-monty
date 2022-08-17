@@ -8,12 +8,11 @@
 
 void open_and_read(char **argv)
 {
-	void (*p_func)(stack_t **, unsigned int);
 	FILE *fp;
-	char *buf = NULL, *token = NULL, command[1024];
+	char *buf = NULL, *token = NULL, *n;
 	size_t len = 0;
 	ssize_t line_size;
-	unsigned int counter = 1;
+	unsigned int counter;
 	stack_t *top = NULL;
 
 	fp = fopen(argv[1], "r");
@@ -22,32 +21,29 @@ void open_and_read(char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n",argv[1]);
 		exit(EXIT_FAILURE);
 	}
+
+	counter = 0;
 	while ((line_size = getline(&buf, &len, fp)) != -1)
 	{
+		counter++;
 		token = strtok(buf, "\n\t\r ");
-		if (*token == '\0')
-			continue;
-		strcpy(command,token);
+
+		/*strcpy(command,token);*/
 		if (found_comment(token, counter) == 1)
 			continue;
+
 		if (strcmp(token, "push") == 0)
 		{
-			token = strtok(NULL, "\n\t\r ");
-			if (token == NULL || found_number(token) == -1)
+			n = strtok(NULL, "\n\t\r ");
+			if (strcmp(token, "push") == 0)
 			{
-				fprintf(stderr, "L%u: usage: push integer\n", counter);
-                		exit(EXIT_FAILURE);
+				n = strtok(NULL, "\n\t\r ");
+				push_stack(&top, counter, n);
 			}
-			number = atoi(token);
-			p_func = get_op_code(command, counter);
-			p_func(&top, counter);
+			else
+				get_op_code(token, &top, counter);
 		}
-		else
-		{
-			p_func = get_op_code(token, counter);
-                        p_func(&top, counter);
-		}
-		counter++;
+
 	}
 	fclose(fp);
 	if(buf != NULL)
@@ -62,21 +58,30 @@ void open_and_read(char **argv)
  *
  */
 
-int found_number(char *token)
+/**int found_number(char *token)
 {
-	int i = 0;
+	int i;
 
 	if (token == NULL)
-		return (-1);
-	while (token[i])
 	{
-		if (token[i] != '-' && isdigit(token[i] == 0))
-			return (-1);
-		i++;
+		fprintf (stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	for (i = 0; token[i]; i++)
+	{
+		if (token[0] != '-' && i == 0)
+			continue;
+		if (isdigit(token[i]) == 0)
+		{
+			fprintf (stderr, "L%d: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
 	
 	}
 	return (1);
 }
+*/
 /**
  *
  *
