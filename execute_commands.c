@@ -52,7 +52,7 @@ void open_and_read(char **argv)
 	fclose(fp);
 	if(buf != NULL)
 		free(buf);
-	free(top);
+	free_stack(top);
 }
 
 /** error handle separate fuctions to create than add error handeler functions here */

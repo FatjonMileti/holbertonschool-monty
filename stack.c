@@ -73,4 +73,20 @@ void pop_stack(stack_t **top, __attribute__((unused)) unsigned int line)
 	tmp = tmp->next;
 	free(*top);
 	*top = tmp;
+
+}
+
+void free_stack(stack_t *top)
+{
+	stack_t *tmp;
+	if (top == NULL)
+		return;
+
+	while(top != NULL)
+	{
+		tmp = top;
+		top = top->next;
+		free(tmp);
+	}
+	free(top);
 }
