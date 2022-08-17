@@ -14,8 +14,13 @@ int get_op_code(char *token,stack_t **top, unsigned int line)
 		{"pop", pop_stack},
 		{"swap", _swap},
 		{"add", _add},
+		{"sub", _sub},
+		{"div", _div},
+		{"mul", _mul},
+		{"mod", _mod},
 		{"nop", _nop},
 		{"pchar", _pchar},
+		{"pstr", _pstr},
 		{NULL, NULL}
 	};
 	for (i = 0; operation[i].opcode != NULL; i++)
