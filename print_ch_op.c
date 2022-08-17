@@ -24,3 +24,27 @@ void _pchar(stack_t **top, unsigned int line)
 	putchar((*top)->n);
 	putchar('\n');
 }
+/*
+ *
+ */
+void _pstr(stack_t **top, __attribute__((unused)) unsigned int line)
+{
+	int str;
+	stack_t *tmp;
+
+	if (*top == NULL)
+	{
+		putchar('\n');
+		return;
+	}
+	tmp = *top;
+	while (tmp != NULL)
+	{
+		str = tmp->n;
+		if (str <= 0 || str > 127)
+			break;
+		putchar(str);
+		tmp = tmp->next;
+	}
+	putchar('\n');
+}
