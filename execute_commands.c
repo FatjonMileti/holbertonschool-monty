@@ -35,16 +35,12 @@ void open_and_read(char **argv)
 		if (strcmp(token, "push") == 0)
 		{
 			n = strtok(NULL, "\n\t\r ");
-			if (strcmp(token, "push") == 0)
-			{
-				n = strtok(NULL, "\n\t\r ");
-				push_stack(&top, counter, n);
-			}
-			else
-				get_op_code(token, &top, counter);
+			push_stack(&top, counter, n);
 		}
-
+		else
+			get_op_code(token, &top, counter);
 	}
+
 	fclose(fp);
 	if(buf != NULL)
 		free(buf);
