@@ -2,10 +2,11 @@
 /**
  * get_op_code - function that will perform the operation
  * @token: operation code
+ * @top: first element
  * @line: line readed
  * Return: void
  */
-int get_op_code(char *token,stack_t **top, unsigned int line)
+int get_op_code(char *token, stack_t **top, unsigned int line)
 {
 	int i;
 	instruction_t operation[] = {

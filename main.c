@@ -13,7 +13,6 @@ int main(int argc, char **argv)
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-
 	open_and_read(argv);
 	return (0);
 }

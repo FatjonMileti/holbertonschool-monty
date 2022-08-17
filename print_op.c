@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- *
- *
- *
+ * _pchar - Function that prints character at the top of stack
+ * @line: line number
+ * Return: no return
  *
  */
 void _pchar(stack_t **top, unsigned int line)
@@ -24,8 +24,11 @@ void _pchar(stack_t **top, unsigned int line)
 	putchar(num);
 	putchar('\n');
 }
-/*
- *
+/**
+ * _pstr - Function that prints the string at the top of stack
+ * @top: pointer to the top of stack
+ * @line: line nummber(unused in this case) but neccessary as a second func par
+ * Return: no return
  */
 void _pstr(stack_t **top, __attribute__((unused)) unsigned int line)
 {
@@ -50,9 +53,10 @@ void _pstr(stack_t **top, __attribute__((unused)) unsigned int line)
 }
 
 /**
- *
- *
- *
+ * _mul - function that multiplies the top element of stack with the second top
+ * @top: top element
+ * @line_number: number of lines
+ * Return: no return
  */
 
 void _mul(stack_t **top, unsigned int line_number)
@@ -70,9 +74,12 @@ void _mul(stack_t **top, unsigned int line_number)
 }
 
 /**
- *
- *
- *
+ * _mod - Function that gives the module off the second top element from the
+ * first top
+ * eleent of the stack
+ * @top: top element
+ * @line_number: number of lines
+ * Return: no return
  */
 
 void _mod(stack_t **top, unsigned int line_number)

@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- *
- *
- *
+ * open_and_read - function that opens, reads & executes given commands
+ * @argv: arguments received
+ * Return: no return
  */
 
 void open_and_read(char **argv)
@@ -18,20 +18,17 @@ void open_and_read(char **argv)
 	fp = fopen(argv[1], "r");
 	if (fp == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n",argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
 	counter = 0;
 	while ((line_size = getline(&buf, &len, fp)) != -1)
 	{
 		counter++;
 		token = strtok(buf, "\n\t\r ");
 
-		/*strcpy(command,token);*/
 		if (token == NULL || strncmp(token, "#", 1) == 0)
 			continue;
-
 		if (strcmp(token, "push") == 0)
 		{
 			n = strtok(NULL, "\n\t\r ");
@@ -40,47 +37,8 @@ void open_and_read(char **argv)
 		else
 			get_op_code(token, &top, counter);
 	}
-
 	fclose(fp);
-	if(buf != NULL)
+	if (buf != NULL)
 		free(buf);
 	free_stack(&top);
 }
-
-/** error handle separate fuctions to create than add error handeler functions here */
-/**
- *
- *
- *
- */
-
-/**int found_number(char *token)
-{
-	int i;
-
-	if (token == NULL)
-	{
-		fprintf (stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-
-	for (i = 0; token[i]; i++)
-	{
-		if (token[0] != '-' && i == 0)
-			continue;
-		if (isdigit(token[i]) == 0)
-		{
-			fprintf (stderr, "L%d: usage: push integer\n", line_number);
-			exit(EXIT_FAILURE);
-		}
-	
-	}
-	return (1);
-}
-*/
-/**
- *
- *
- *
- */
-
