@@ -1,9 +1,10 @@
 #include "monty.h"
 
 /**
- *
- *
- *
+ * _swap - Function that swaps the fist 2 elements os a stack
+ * @top: top element
+ * @line_number: number of lines
+ * Return: no return
  */
 
 void _swap(stack_t **top, unsigned int line_number)
@@ -21,9 +22,10 @@ void _swap(stack_t **top, unsigned int line_number)
 }
 
 /**
- *
- *
- *
+ * _add - Function that adds 2 top elements of the stack
+ * @top: top element
+ * @line_number: number of lines
+ * Return: no return
  */
 
 void _add(stack_t **top, unsigned int line_number)
@@ -41,9 +43,10 @@ void _add(stack_t **top, unsigned int line_number)
 }
 
 /**
- *
- *
- *
+ * _sub - Function that substacts the firt top element form the second top
+ * @top: top element
+ * @line_number: number of lines
+ * Return: no return
  */
 
 void _sub(stack_t **top, unsigned int line_number)
@@ -61,9 +64,10 @@ void _sub(stack_t **top, unsigned int line_number)
 }
 
 /**
- *
- *
- *
+ * _div - Function that devides the first top element of stack by second
+ * @top: top element
+ * @line_number: number oof lines
+ * Return: no return
  */
 
 void _div(stack_t **top, unsigned int line_number)
@@ -86,12 +90,13 @@ void _div(stack_t **top, unsigned int line_number)
 }
 
 /**
- *
- *
- *
+ * _nop - Function that does nothing
+ * @top: top element unused
+ * @line_number: number of lines unused
+ * Return: no return
  */
 
-void _nop(__attribute__((unused))stack_t **top, __attribute__((unused))unsigned int line_number)
+void _nop(__attribute__((unused))stack_t **top, unsigned int line_number)
 {
-
+	(void)line_number;
 }
