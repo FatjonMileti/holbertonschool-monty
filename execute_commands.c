@@ -44,7 +44,7 @@ void open_and_read(char **argv)
 		}
 		else
 		{
-			p_func = get_op_code(command, counter);
+			p_func = get_op_code(token, counter);
                         p_func(&top, counter);
 		}
 		counter++;
