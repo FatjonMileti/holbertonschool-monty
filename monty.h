@@ -52,4 +52,8 @@ void _swap(stack_t **top, unsigned int line_number);
 void _add(stack_t **top, unsigned int line_number);
 void _nop(__attribute__((unused))stack_t **top, __attribute__((unused))unsigned int line_number);
 void _pchar(stack_t **top, unsigned int line);
+void _pstr(stack_t **top, __attribute__((unused)) unsigned int line);
+void _sub(stack_t **top, unsigned int line_number);
+void _div(stack_t **top, unsigned int line_number);
+
 #endif

@@ -48,3 +48,43 @@ void _pstr(stack_t **top, __attribute__((unused)) unsigned int line)
 	}
 	putchar('\n');
 }
+
+/**
+ *
+ *
+ *
+ */
+
+void _mul(stack_t **top, unsigned int line_number)
+{
+	stack_t *temp;
+
+	if (*top == NULL || ((*top)->next == NULL))
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	temp = (*top)->next;
+	temp->n *= (*top)->n;
+	pop_stack(top, line_number);
+}
+
+/**
+ *
+ *
+ *
+ */
+
+void _mod(stack_t **top, unsigned int line_number)
+{
+	stack_t *temp;
+
+	if (*top == NULL || ((*top)->next == NULL))
+	{
+		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	temp = (*top)->next;
+	temp->n %= (*top)->n;
+	pop_stack(top, line_number);
+}
