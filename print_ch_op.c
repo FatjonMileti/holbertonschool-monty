@@ -21,7 +21,7 @@ void _pchar(stack_t **top, unsigned int line)
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", line);
 		exit(EXIT_FAILURE);
 	}
-	putchar((*top)->n);
+	putchar(num);
 	putchar('\n');
 }
 /*
@@ -82,6 +82,11 @@ void _mod(stack_t **top, unsigned int line_number)
 	if (*top == NULL || ((*top)->next == NULL))
 	{
 		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if ((*top)->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp = (*top)->next;
