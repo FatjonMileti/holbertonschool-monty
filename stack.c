@@ -7,7 +7,10 @@ void push_stack(stack_t **top, __attribute__ ((unused)) unsigned int line)
 	stack_t *new = malloc(sizeof(stack_t));
 
 	if (new == NULL)
-		error();
+	{
+		fprintf(stderr, "Error: malloc failed");
+		exit(EXIT_FAILURE);
+	}
 
 	new->n = number;
 	new->prev = NULL;

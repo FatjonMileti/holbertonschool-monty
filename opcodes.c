@@ -13,8 +13,6 @@ void (*get_op_code(char *token, unsigned int line)) (stack_t **, unsigned int)
 		{"pall", pall_stack},
 		{"pint", pint_stack},
 		{"pop", pop_stack},
-		{"swap", _swap},
-		{"nop", _nop},
 		{NULL, NULL}
 	};
 	for (i = 0; operation[i].opcode != NULL; i++)
@@ -24,6 +22,8 @@ void (*get_op_code(char *token, unsigned int line)) (stack_t **, unsigned int)
 			return (operation[i].f);
 		}
 	}
-	/** to insert error handeling function*/
+	fprintf(stderr, "L%u: unknown instruction %s\n", line, token);
+	exit(EXIT_FAILURE);
+
 	return (NULL);
 }

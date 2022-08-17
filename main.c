@@ -9,7 +9,11 @@
 int main(int argc, char **argv)
 {
 	if (argc != 2)
-		/** error agrs */
-		open_&_read(argv);
+	{
+		perror("USAGE: monty file");
+		exit(EXIT_FAILURE);
+	}
+
+	open_and_read(argv);
 	return (0);
 }

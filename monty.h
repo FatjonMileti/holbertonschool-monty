@@ -1,5 +1,6 @@
 #ifndef _MONTY_H
 #define _MONTY_H
+#define _GNU_SOURCE
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,14 +40,13 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void open_&_read(char **argv);
-void (*p_func)(stack_t **, unsigned int);
+void open_and_read(char **argv);
 int found_number(char *token);
 int found_comment(char *token, int counter);
 void (*get_op_code(char *token, unsigned int line)) (stack_t **, unsigned int);
-void push_stack(stack_t **top, __attribute__ ((unused)) unsigned int line);
-void pall_stack(stack_t **top, __attribute__((unused)) unsigned int line);
-void pint_stack(stack_t **top, __attribute__((unused)) unsigned int line);
-void pop_stack(stack_t **top, __attribute__((unused)) unsigned int line);
+void push_stack(stack_t **top, unsigned int line);
+void pall_stack(stack_t **top, unsigned int line);
+void pint_stack(stack_t **top, unsigned int line);
+void pop_stack(stack_t **top, unsigned int line);
 
 #endif
