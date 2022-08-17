@@ -40,3 +40,10 @@ void _add(stack_t **top, unsigned int line_number)
 	pop_stack(top, line_number);
 }
 
+/**
+ *
+ *
+ *
+ */
+
+void _nop(__attribute__((unused))stack_t **top, __attribute__((unused))unsigned int line_number)
