@@ -32,7 +32,7 @@ void _add(stack_t **top, unsigned int line_number)
 
 	if (*top == NULL || ((*top)->next == NULL))
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", line);
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp = (*top)->next;
