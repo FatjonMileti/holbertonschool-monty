@@ -50,4 +50,6 @@ void pint_stack(stack_t **top, unsigned int line);
 void pop_stack(stack_t **top, unsigned int line);
 void free_stack(stack_t **top);
 void _swap(stack_t **top, unsigned int line_number);
+void _add(stack_t **top, unsigned int line_number);
+
 #endif
