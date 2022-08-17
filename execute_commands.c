@@ -29,7 +29,7 @@ void open_and_read(char **argv)
 		token = strtok(buf, "\n\t\r ");
 
 		/*strcpy(command,token);*/
-		if (found_comment(token, counter) == 1)
+		if (token == NULL || strncmp(token, "#", 1) == 0)
 			continue;
 
 		if (strcmp(token, "push") == 0)
@@ -83,13 +83,4 @@ void open_and_read(char **argv)
  *
  *
  */
-int found_comment(char *token, int counter)
-{
-	if (token == NULL || token[0] == '#')
-	{
-		counter++;
-		return (1);
-	}
-	return (-1);
-}
 

@@ -42,7 +42,6 @@ typedef struct instruction_s
 
 void open_and_read(char **argv);
 /**int found_number(char *token);*/
-int found_comment(char *token, int counter);
 int get_op_code(char *token, stack_t **top, unsigned int line);
 void push_stack(stack_t **top, unsigned int line_number, char *token);
 void pall_stack(stack_t **top, unsigned int line_number);
