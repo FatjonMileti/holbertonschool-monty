@@ -48,6 +48,6 @@ void push_stack(stack_t **top, unsigned int line);
 void pall_stack(stack_t **top, unsigned int line);
 void pint_stack(stack_t **top, unsigned int line);
 void pop_stack(stack_t **top, unsigned int line);
-void free_stack(stack_t *top);
+void free_stack(stack_t **top);
 
 #endif
