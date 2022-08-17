@@ -2,6 +2,7 @@
 
 /**
  * _pchar - Function that prints character at the top of stack
+ * @top: top element
  * @line: line number
  * Return: no return
  *
@@ -76,7 +77,7 @@ void _mul(stack_t **top, unsigned int line_number)
 /**
  * _mod - Function that gives the module off the second top element from the
  * first top
- * eleent of the stack
+ * element of the stack
  * @top: top element
  * @line_number: number of lines
  * Return: no return
