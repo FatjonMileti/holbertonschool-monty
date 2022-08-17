@@ -15,7 +15,7 @@ void push_stack(stack_t **top, unsigned int line_number, char *token)
 
         for (i = 0; token[i]; i++)
         {
-                if (token[0] != '-' && i == 0)
+                if (token[0] == '-' && i == 0)
                         continue;
                 if (isdigit(token[i]) == 0)
                 {
