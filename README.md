@@ -1,14 +1,16 @@
-#                  [MONTY](https://montyscoconut.github.io/)
-
 
 ![Monty](https://user-images.githubusercontent.com/105599575/185717069-d67965d2-5a72-4d44-9797-fe31cc22110d.jpeg)
 
 
+###[MONTY](https://montyscoconut.github.io/)
+
 Monty 0.98 is a **scripting language that is first compiled into Monty byte codes** (Just like Python). It relies on a unique stack, with specific instructions to manipulate it.
+
 ### Description
 This program is built to interpret Monty-like scripted files according to operation codes provided by Holberton School.
 
-### Allowable opcodes and what they do
+### Allowed opcodes and what they do:
+
 | opcode | objective |
 | --- | --- |
 | **push** | adds element to the 'top' of stack and 'end' of queue |
@@ -31,6 +33,7 @@ This program is built to interpret Monty-like scripted files according to operat
 
 
 Examples:
+
 `$ cat opcodetestfile.m`
 
 `push 1`
@@ -70,6 +73,7 @@ Examples:
 
 
  ### Code explained
+ 
  **1 - [monty.h](https://github.com/FatjonMileti/holbertonschool-monty/blob/main/monty.h)** - Header file, containing the libraries to be used, functions & data structures
  
  **2 - [main.c](https://github.com/FatjonMileti/holbertonschool-monty/blob/main/main.c)** - Main function that checks for the number of arguments
