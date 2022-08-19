@@ -34,41 +34,32 @@ This program is built to interpret Monty-like scripted files according to operat
 
 Examples:
 
-`$ cat opcodetestfile.m`
 
-`push 1`
+```
+$ cat opcodetestfile.m
+push 1
+push 2
+push 3
+pall
 
-`push 2`
-
-`push 3`
-
-`pall`
-
-`$ ./montyfile opcodetestfile.m`
-`3`
-
-`2`
-
-`1`
-
-`$`
-
+$ ./montyfile opcodetestfile.m
+3
+2
+1
+$
+```
 ---
 
-`$ ./montyfile opcodetestfile.m`
+```
+$ ./montyfile opcodetestfile.m
+3
+2
+1
+2
+1
+3
 
-`3`
-
-`2`
-
-`1`
-
-`2`
-
-`1`
-
-`3`
-
+```
 ---
 
 
