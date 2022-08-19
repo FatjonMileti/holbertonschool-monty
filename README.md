@@ -2,7 +2,7 @@
 ![Monty](https://user-images.githubusercontent.com/105599575/185717069-d67965d2-5a72-4d44-9797-fe31cc22110d.jpeg)
 
 
-###[MONTY](https://montyscoconut.github.io/)
+### [MONTY](https://montyscoconut.github.io/)
 
 Monty 0.98 is a **scripting language that is first compiled into Monty byte codes** (Just like Python). It relies on a unique stack, with specific instructions to manipulate it.
 
